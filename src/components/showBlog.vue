@@ -30,4 +30,14 @@ export default {
 </script>
 
 <style>
+#show-blogs{
+  max-width: 800px;
+  margin: 0 auto;
+}
+.single-blog{
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  background: #eee;
+}
 </style>
