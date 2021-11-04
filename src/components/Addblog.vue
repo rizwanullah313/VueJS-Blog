@@ -4,15 +4,15 @@
 
   <form>
    <label>Blog Title:</label>
-   <input type="text" required />
+   <input type="text" v-model="title" required />
    <label>Blog Content:</label>
-   <textarea></textarea>
+   <textarea v-model="content"></textarea>
   </form>
 
    <div id="preview">
    <h3>Preview Blog</h3>
-   <p>Blog Title:</p>
-   <p>Blog Content:</p>
+   <p>Blog Title: {{title}}</p>
+   <p>Blog Content: {{content}}</p>
    </div>
 
   </div>
@@ -22,6 +22,8 @@
 export default {
   data () {
     return {
+    title: "",
+    content: ""
     }
   }
 }
