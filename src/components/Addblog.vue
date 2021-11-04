@@ -4,15 +4,15 @@
 
   <form>
    <label>Blog Title:</label>
-   <input type="text" v-model="title" required />
+   <input type="text" v-model.lazy="blog.title" required />
    <label>Blog Content:</label>
-   <textarea v-model="content"></textarea>
+   <textarea v-model.lazy="blog.content"></textarea>
   </form>
 
    <div id="preview">
    <h3>Preview Blog</h3>
-   <p>Blog Title: {{title}}</p>
-   <p>Blog Content: {{content}}</p>
+   <p>Blog Title: {{blog.title}}</p>
+   <p>Blog Content: {{blog.content}}</p>
    </div>
 
   </div>
@@ -22,8 +22,10 @@
 export default {
   data () {
     return {
+    blog:{
     title: "",
     content: ""
+    }
     }
   }
 }

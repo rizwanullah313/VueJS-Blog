@@ -16,3 +16,13 @@ npm run build
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+v-model="title"
+//ye data me title ke value lega our show karega
+
+v-model="blog.title"
+// ye data me blog k object k inside value title lega
+
+v-mode.lazy
+//yani jab complete hojye input tab show karega saath type saath show nhi karega
