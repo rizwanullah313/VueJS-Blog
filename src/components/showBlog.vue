@@ -1,0 +1,33 @@
+<template>
+  <div id="show-blogs">
+  <h1>All Blog Articals</h1>
+  <div v-for="blog in blogs" class="single-blog">
+  <h2>{{blog.title}}</h2>
+  <artical>{{blog.body}}</artical>
+
+  </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  data () {
+    return {
+    blogs: []
+    }
+  },
+  methods: {
+
+  },
+  created() {
+     this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
+     console.log(data);
+     this.blogs = data.body.slice(0,10);
+  })
+  }
+}
+</script>
+
+<style>
+</style>
