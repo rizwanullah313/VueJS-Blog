@@ -2,7 +2,7 @@
   <div id="Addblog">
   <h1>Add A new Blog Post</h1>
 
-  <form>
+  <form v-if="!submitted">
    <label>Blog Title:</label>
    <input type="text" v-model.lazy="blog.title" required />
    <label>Blog Content:</label>
@@ -26,6 +26,10 @@
 
    <button v-on:click.prevent="post"> Add Blog </button>
   </form>
+
+  <div v-if="submitted">
+    <h3>Thanks For Adding Your Post</h3>
+  </div>
 
    <div id="preview">
    <h3>Preview Blog</h3>
@@ -51,7 +55,8 @@ export default {
     categories: [],
     author: ""
     },
-    authors: ["Rizwan", "shaan", "Haris", "Haroon"]
+    authors: ["Rizwan", "shaan", "Haris", "Haroon"],
+    submitted: false,
     }
   },
   methods: {
@@ -62,6 +67,7 @@ export default {
     userid: 1
     }).then(function(data){
         console.log(data);
+        this.submitted = true;
     });
     }
   }

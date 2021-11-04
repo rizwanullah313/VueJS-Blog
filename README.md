@@ -29,3 +29,5 @@ v-mode.lazy
 
 v-for="category in blog.categories"
 // mean ye ham li k tag me use krty hy jaha ham multiple data uta thy hy our screen er display kerty hy
+
+npm install vue-resource
