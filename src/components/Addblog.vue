@@ -18,6 +18,11 @@
    <label> Cheese </label>
    <input type="checkbox" value="cheese" v-model="blog.categories"/>
    </div>
+
+   <label>Author:</label>
+   <select v-model="blog.author">
+       <option v-for="author in authors">{{author}}</option>
+   </select>
   </form>
 
    <div id="preview">
@@ -28,6 +33,7 @@
    <ul>
    <li v-for="category in blog.categories">{{category}}</li>
    </ul>
+   <p>{{blog.author}}</p>
    </div>
 
   </div>
@@ -40,8 +46,10 @@ export default {
     blog:{
     title: "",
     content: "",
-    categories: []
-    }
+    categories: [],
+    author: ""
+    },
+    authors: ["Rizwan", "shaan", "Haris", "Haroon"]
     }
   }
 }
@@ -66,8 +74,9 @@ input[type="text"], textarea{
 }
 #preview{
     padding: 10px 20px;
-    border: 1px dotted #ccc;
+    border: 2px dotted #ccc;
     margin: 30px 0;
+
 }
 h3{
     margin-top: 10px;
