@@ -33,3 +33,4 @@ v-for="category in blog.categories"
 npm install vue-resource
 
 npm install vue-router --save
+// main ma history mode isleye lika q k /# arajha ta our hamy wahy hatam kerna taha url me s

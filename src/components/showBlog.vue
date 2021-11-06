@@ -1,10 +1,12 @@
 <template>
-  <div v-theme:column="'narrow'" id="show-blogs">
+  <div v-theme:column="'rainbow'" id="show-blogs">
   <h1>All Blog Articals</h1>
   <input type="text" v-model="search" placeholder="Search Blogs"/>
   <div v-for="blog in filteredBlogs" class="single-blog">
+  <router-link v-bind:to="'/blog/' + blog.id">
   <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
-  <artical>{{blog.body | snippet}}</artical>
+  </router-link>
+  <article>{{blog.content | snippet}}</article>
 
   </div>
   </div>
@@ -23,7 +25,7 @@ export default {
 
   },
   created() {
-     this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
+     this.$http.get('https://vuejs-app-3fd24-default-rtdb.firebaseio.com/').then(function(data){
      console.log(data);
      this.blogs = data.body.slice(0,10);
   })
