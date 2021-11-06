@@ -25,9 +25,15 @@ export default {
 
   },
   created() {
-     this.$http.get('https://vuejs-app-3fd24-default-rtdb.firebaseio.com/').then(function(data){
-     console.log(data);
-     this.blogs = data.body.slice(0,10);
+     this.$http.get('https://vuejs-app-3fd24-default-rtdb.firebaseio.com/posts.json').then(function(data){
+        return data.json();
+  }).then(function(data){
+     var blogsArray = [];
+     for (let key in data){
+       data[key].id = key
+       blogsArray.push(data[key]);
+     }
+        this.blogs = blogsArray
   })
   },
   computed: {
