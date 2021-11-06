@@ -69,11 +69,14 @@ export default {
 #show-blogs{
   max-width: 800px;
   margin: 0 auto;
+  margin-top: 40px;
+  border: 2px solid green;
 }
 .single-blog{
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
   background: #eee;
+  border: 2px solid red;
 }
 </style>

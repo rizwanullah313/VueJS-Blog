@@ -1,8 +1,8 @@
 <template>
-  <div id="Addblog">
+  <div id="Addblog" class="main">
   <h1>Add A new Blog Post</h1>
 
-  <form v-if="!submitted">
+  <form v-if="!submitted" id="fform">
    <label>Blog Title:</label>
    <input type="text" v-model.lazy="blog.title" required />
    <label>Blog Content:</label>
@@ -19,8 +19,8 @@
    <input type="checkbox" value="cheese" v-model="blog.categories"/>
    </div>
 
-   <label>Author:</label>
-   <select v-model="blog.author">
+   <label id="selectid">Author:</label>
+   <select v-model="blog.author" id="selectid">
        <option v-for="author in authors">{{author}}</option>
    </select>
 
@@ -76,31 +76,45 @@ export default {
 }
 #add-blog{
     margin: 20px auto;
-    max-width: 500px;
 }
 label{
     display: block;
-    margin: 20px 0 10px;
+    margin: 20px 5px 10px;
 }
 input[type="text"], textarea{
     display: block;
-    width: 100%;
+    width: 94.5%;
     padding: 8px;
+    margin: 0 auto;
 }
 #preview{
     padding: 10px 20px;
     border: 2px dotted #ccc;
     margin: 30px 0;
-
+    background: black;
+    color: white
 }
 h3{
     margin-top: 10px;
+    text-align: center;
 }
 #checkboxes input{
   display: inline-block;
   margin-right: 10px;
+  margin: 0 auto;
 }
 #checkboxes label{
    display: inline-block;
+   margin: 20px 30px;
+}
+#selectid{
+     margin: 20px 30px;
+}
+.main{
+   width: 50%;
+   margin: 0 auto;
+   background-color: #eee;
+   border: 2px solid black;
+   margin-top: 40px;
 }
 </style>

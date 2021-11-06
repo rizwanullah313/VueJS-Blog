@@ -1,9 +1,10 @@
 <template>
+<nav>
   <ul>
     <li><router-link to="/" exact>Blog</router-link></li>
     <li><router-link to="/add" exact>Add A New Blog</router-link></li>
   </ul>
-
+</nav>
 </template>
 
 <script>
@@ -23,18 +24,19 @@ li{
     margin: 0 10px;
 }
 a{
-    color: #666;
+    color: #fff;
     text-decoration: none;
-    padding: 6px 8px;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 5px;
 }
 nav{
-    background: #000;
-    padding: 14px 0;
+    background: crimson;
+    padding: 30px 0;
     margin-bottom: 40px;
+    width: 100%;
 }
 .router-link-active{
-    background: #333;
-    color: #eee;
+    background: rgba(255,255,255,0.8);
+    color: #444;
 }
 </style>
